@@ -35,7 +35,6 @@ const App = () => {
     return (
       // this is where the login will go
       <form id="loginForm">
-        {/* <label for="userName">Input User Name:</label> */}
         <input
           className="fav-input"
           type="text"
@@ -50,8 +49,6 @@ const App = () => {
           onClick={() => {
             let val = document.getElementById("userName");
             console.log(val.value);
-            //val =  val.value
-            // how to get the data from the input text field to assign to the user state??
             setLoginName(val.value);
           }}
         ></input>

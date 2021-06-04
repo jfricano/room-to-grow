@@ -3,9 +3,6 @@ import React from "react";
 
 const Favorites = (props) => {
   const { favorites } = props;
-  // const { favorites }
-
-  console.log(favorites);
 
   return (
     <div id="favorites-box">

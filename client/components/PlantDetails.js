@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 const PlantDetails = (props) => {
-  const { gState } = props;
-  const { family } = props;
-  const { plant } = props;
-  const { plantDetails } = props;
-  const { setPlantDetails } = props;
-  const { setFavorites } = props;
-  const { favorites } = props;
-  const { loginName } = props;
+  const {
+    gState,
+    family,
+    plant,
+    plantDetails,
+    setPlantDetails,
+    setFavorites,
+    favorites,
+  } = props;
 
   useEffect(
     () => {
@@ -84,37 +85,11 @@ const PlantDetails = (props) => {
                   (e) => {
                     e.preventDefault();
                     const notes = document.getElementById("notes-input");
-                    console.log("posting to db...");
-
-                    // this response is from the database
-                    // server gets body
-                    // models.favorites.create(req.body)
-                    //res.locals.favorites = models.favorites.find({})
-                    // res.send(res.locals.favorites)
-
-                    // response
-                    //  const response =  fetch(`/db`, {
-                    //     // method
-                    //     method: 'POST',
-                    //     // headers
-                    //     headers: {
-                    //       'Content-Type': 'application/json'
-                    //     },
-
-                    //     // body
-                    //     body: { plants : plantDetails,
-                    //             user_id : loginName,
-                    //             plant_id : plantDetials.scientific_name,
-                    //             notes : ' '}
-                    //   }
-                    //   )
-                    //const notes = document.getElementById('fav-input')
                     setFavorites([
                       ...favorites,
                       { name: plantDetails.common_name, notes: notes.value },
                     ]);
                   }
-                  // setFavorites({response.json())
                 }
               >
                 Favorite
@@ -126,18 +101,4 @@ const PlantDetails = (props) => {
     );
 };
 
-/**
- * common_name: data.common_name,
-    scientific_name: data.scientific_name,
-    family_common_name: data.family_common_name,
-    edible: data.edible,
-    vegetable: data.vegetable,
-    image_url: data.image_url,
-    toxicity: data.specifications.toxicity,
-    growth_habit: data.specifications.growth_habit,
-    growth_form: data.specifications.growth_form,
-    growth_rate: data.specifications.growth_rate,
-    shape_and_orientation: data.specifications.shape_and_orientation,
-    average_height: data.specifications.average_height.cm
- */
 export default PlantDetails;
