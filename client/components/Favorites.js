@@ -1,11 +1,7 @@
 import React from "react";
-// import React, { useEffect, useState } from 'react';
 
 const Favorites = (props) => {
   const { favorites } = props;
-  // const { favorites }
-
-  console.log(favorites);
 
   return (
     <div id="favorites-box">

@@ -23,19 +23,4 @@ userController.createUser = (req, res, next) => {
   });
 };
 
-//tbd endpoint
-// userController.post =
-//   ("/login",
-//   (req, res) => {
-//     bcrypt.hash =
-//       (req.body.password,
-//       saltRounds,
-//       (err, hash) => {
-//         db.users.create({
-//           username: req.body.username,
-//           password: hash,
-//         });
-//       });
-//   });
-
 module.exports = userController;
