@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 const PlantDetails = (props) => {
   const {
@@ -21,10 +21,10 @@ const PlantDetails = (props) => {
       fetch(`/location/${gState.slug}/${family}/${plant.scientific_name}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log("plant details data: ", data);
+          console.log('plant details data: ', data);
           setPlantDetails(data);
         })
-        .catch(() => console.log("oops"));
+        .catch(() => console.log('oops'));
     },
     [plant]
     // FOR TESTING W/O BACKEND ONLY
@@ -42,55 +42,53 @@ const PlantDetails = (props) => {
   if (plantDetails === null) return <div></div>;
   else
     return (
-      <div id="detailsContainer">
-        <ul id="detailsList">
-          <img className="detail-img" src={`${plantDetails.image_url}`}></img>
-          <li className="details-element">
-            <span className="details-field">Name:</span>{" "}
+      <div id='detailsContainer'>
+        <ul id='detailsList'>
+          <img className='detail-img' src={`${plantDetails.image_url}`}></img>
+          <li className='details-element'>
+            <span className='details-field'>Name:</span>{' '}
             {plantDetails.common_name}
           </li>
-          <li className="details-element">
-            <span className="details-field">Scientific Name:</span>{" "}
+          <li className='details-element'>
+            <span className='details-field'>Scientific Name:</span>{' '}
             {plantDetails.scientific_name}
           </li>
-          <li className="details-element">
-            <span className="details-field">Edible:</span>{" "}
+          <li className='details-element'>
+            <span className='details-field'>Edible:</span>{' '}
             {`${plantDetails.edible}`}
           </li>
-          <li className="details-element">
-            <span className="details-field">Average Height:</span>{" "}
+          <li className='details-element'>
+            <span className='details-field'>Average Height:</span>{' '}
             {plantDetails.average_height}
           </li>
-          <li className="details-element">
-            <span className="details-field">Growth Habit:</span>{" "}
+          <li className='details-element'>
+            <span className='details-field'>Growth Habit:</span>{' '}
             {plantDetails.growth_habit}
           </li>
-          <li className="details-element">
-            <span className="details-field">Growth Rate:</span>{" "}
+          <li className='details-element'>
+            <span className='details-field'>Growth Rate:</span>{' '}
             {plantDetails.growth_rate}
           </li>
           <li>
             <form>
               <input
-                id="notes-input"
-                className="fav-input"
-                type="text"
-                name="notes"
-                placeholder="Write notes here"
+                id='notes-input'
+                className='fav-input'
+                type='text'
+                name='notes'
+                placeholder='Write notes here'
               ></input>
               <button
-                className="fav-button"
-                type="submit"
-                onClick={
-                  (e) => {
-                    e.preventDefault();
-                    const notes = document.getElementById("notes-input");
-                    setFavorites([
-                      ...favorites,
-                      { name: plantDetails.common_name, notes: notes.value },
-                    ]);
-                  }
-                }
+                className='fav-button'
+                type='submit'
+                onClick={(e) => {
+                  e.preventDefault();
+                  const notes = document.getElementById('notes-input');
+                  setFavorites([
+                    ...favorites,
+                    { name: plantDetails.common_name, notes: notes.value },
+                  ]);
+                }}
               >
                 Favorite
               </button>
